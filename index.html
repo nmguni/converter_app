@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <title>eloquent</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+          <h1 class="header__title">Converter App</h1>
+          <h2 class="header__subtitle">Weight - Speed - Pressure <br>energy - Energy - Frequency</h2>
+      </div>
+
+      <div class="cards">
+        <div class=" card [ is-collapsed ] ">
+          <div class="card__inner [ js-expander ]">
+            <span>weight</span>
+            <i class="fa fas fa-balance-scale-left"></i>
+          </div>
+          <div class=" card__expander">
+            <div class="grid_container">
+              <div class="grid_item">
+                <input
+                  type="number"
+                  id="massInput"
+                  placeholder="Enter: Grams"
+                />
+                <select
+                  onchange="mass_selection()"
+                  class="selecton_drop_down"
+                  id="mass_selection"
+                >
+                  <option value="grams">Grams</option>
+                  <option value="kilograms">kilograms</option>
+                  <option value="Ounces">Ounces</option>
+                  <option value="Pounds">Pounds</option>
+                </select>
+                <i class="close_card fas fa-times"></i>
+              </div>
+              <div class="grid_item display_none grams">
+                Grams<br />
+                <span id="grams">---</span>
+              </div>
+              <div class="pounds" class="grid_item">
+                Pounds <br />
+                <span id="pounds">---</span>
+              </div>
+              <div class="kilograms" class="grid_item">
+                Kilograms<br />
+                <span id="kilograms">---</span>
+              </div>
+              <div class="grid_item Ounces">
+                Ounces<br />
+                <span id="Ounces">---</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class=" card [ is-collapsed ] ">
+          <div class="card__inner [ js-expander ]">
+            <span>Speed</span>
+            <i class="fa fas fa-ruler"></i>
+          </div>
+          <div class="card__expander">
+            <i class="fa fa-close [ js-collapser ]"></i>
+            Expander
+          </div>
+        </div>
+
+        <div class=" card [ is-collapsed ] ">
+          <div class="card__inner [ js-expander ]">
+            <span>Energy</span>
+            <i class="fa fas fa-battery-three-quarters"></i>
+          </div>
+          <div class="card__expander">
+              <i class="fa fa-close [ js-collapser ]"></i>
+            Expander
+          </div>
+        </div>
+
+        <div class=" card [ is-collapsed ] ">
+          <div class="card__inner [ js-expander ]">
+            <span>pressure</span>
+            <i class="fa fas fa-compress-arrows-alt"></i>
+          </div>
+          <div class="card__expander">
+            <i class="fa fa-close [ js-collapser ]"></i>
+            Expander
+          </div>
+        </div>
+
+       <div class=" card [ is-collapsed ] ">
+          <div class="card__inner [ js-expander ]">
+            <span>Length</span>
+            <i class="fa fas fa-ruler"></i>
+          </div>
+          <div class="card__expander">
+            <i class="fa fa-close [ js-collapser ]"></i>
+            Expander
+          </div>
+        </div>
+
+        <div class=" card [ is-collapsed ] ">
+          <div class="card__inner [ js-expander ]">
+            <span>Frequency</span>
+            <i class="fa fas fa-broadcast-tower"></i>
+          </div>
+          <div class="card__expander">
+            <i class="fa fa-close [ js-collapser ]"></i>
+            Expander
+          </div>
+        </div>
+  <!--
+        <div class=" card [ is-collapsed ] ">
+          <div class="card__inner [ js-expander ]">
+            <span>Card</span>
+            <i class="fa fa-folder-o"></i>
+          </div>
+          <div class="card__expander">
+            <i class="fa fa-close [ js-collapser ]"></i>
+            Expander
+          </div>
+        </div>
+
+        <div class=" card [ is-collapsed ] ">
+          <div class="card__inner [ js-expander ]">
+            <span>Card</span>
+            <i class="fa fa-folder-o"></i>
+          </div>
+          <div class="card__expander">
+            <i class="fa fa-close [ js-collapser ]"></i>
+            Expander
+          </div>
+        </div>
+
+        <div class=" card [ is-collapsed ] ">
+          <div class="card__inner [ js-expander ]">
+            <span>Card</span>
+            <i class="fa fa-folder-o"></i>
+          </div>
+          <div class="card__expander">
+            <i class="fa fa-close [ js-collapser ]"></i>
+            Expander
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <script src="app.js"></script>
+  </body>
+</html>
