@@ -14,7 +14,7 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <title>eloquent</title>
+    <title>Convertions</title>
   </head>
   <body>
     <div class="wrapper">
@@ -75,9 +75,48 @@
             <i class="fa fas fa-ruler"></i>
           </div>
           <div class="card__expander">
-            <i class="fa fa-close [ js-collapser ]"></i>
-            Expander
+           
+            <div class=" card__expander">
+            <div class="grid_container">
+                <div class="grid_item">
+                  <input
+                    type="number"
+                    id="massInput"
+                    placeholder="Enter: Grams"
+                  />
+                  <select
+                    onchange="mass_selection()"
+                    class="selecton_drop_down"
+                    id="mass_selection"
+                  >
+                    <option value="grams">Grams</option>
+                    <option value="kilograms">kilograms</option>
+                    <option value="Ounces">Ounces</option>
+                    <option value="Pounds">Pounds</option>
+                  </select>
+                 
+                </div>
+                <div class="grid_item display_none grams">
+                  Grams<br />
+                  <span id="grams">---</span>
+                </div>
+                <div class="pounds" class="grid_item">
+                  Pounds <br />
+                  <span id="pounds">---</span>
+                </div>
+                <div class="kilograms" class="grid_item">
+                  Kilograms<br />
+                  <span id="kilograms">---</span>
+                </div>
+                <div class="grid_item Ounces">
+                  Ounces<br />
+                  <span id="Ounces">---</span>
+                </div>
+              </div>
+            </div>
           </div>
+            
+        
         </div>
 
         <div class=" card [ is-collapsed ] ">
