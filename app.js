@@ -1,6 +1,5 @@
 // open close
 var $cell = $(".card");
-
 //open and close card when clicked on card
 $cell.find(".js-expander").click(function() {
   var $thisCell = $(this).closest(".card");
@@ -35,21 +34,6 @@ $cell.find(".js-collapser").click(function() {
 const cards = document.getElementsByClassName("card");
 const expand = document.getElementsByClassName("js-expander");
 const closeCard = document.getElementsByClassName("close_card")[0];
-
-// closeCard.addEventListener("click", () => {
-//   cards.classList.remove;
-// });
-
-// for (let i = 0; i < cards.length; i++) {
-//   cards[i].addEventListener("click", () => {
-//     cards[i].classList.add("is-expanded");
-
-//     // /close
-//     closeCard.addEventListener("click", () => {
-//       cards[i].classList.remove("is-expanded");
-//     });
-//   });
-// }
 const sel = document.getElementById("mass_selection");
 
 sel.addEventListener("change", e => {
@@ -148,4 +132,29 @@ function mass_selection() {
     document.getElementsByClassName("pounds")[0].classList.add("display_none");
     oz_.classList.remove("display_none");
   }
+}
+
+// -----------------------------------------
+//--------------------- speed --------------
+// -----------------------------------------
+
+// select selector
+// let text_change = $("select").change(() => {
+
+//   $("select option:selected").each(() => {
+//     console.log($(this).text());
+//   });
+// });
+
+$(document).ready(function() {
+  $("body").on("change", "#select", function() {
+    let select_text = this.value;
+
+    // let value_ = $("speedInput").val();
+    // console.log(value_);
+  });
+});
+
+function speedSelection() {
+  // get input
 }
