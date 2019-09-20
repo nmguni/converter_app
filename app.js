@@ -138,23 +138,21 @@ function mass_selection() {
 //--------------------- speed --------------
 // -----------------------------------------
 
-// select selector
-// let text_change = $("select").change(() => {
+const MPHhtml = $("div, MPH");
+const FPShmtl = $("div, FPS");
+const MPShtml = $("");
+const KPHhtml = $("");
 
-//   $("select option:selected").each(() => {
-//     console.log($(this).text());
-//   });
-// });
-
-$(document).ready(function() {
+function speedCalc() {
   $("body").on("change", "#select", function() {
-    let select_text = this.value;
-
-    // let value_ = $("speedInput").val();
-    // console.log(value_);
+    const selected = this.value;
+    if (selected == "FPS") {
+      footSecondCalc();
+    }
   });
-});
+}
+// else if ...
 
-function speedSelection() {
-  // get input
+function footSecondCalc() {
+  FPShmtl.addClass("display_none");
 }

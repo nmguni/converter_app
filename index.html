@@ -73,7 +73,7 @@
         <div class=" card [ is-collapsed ] ">
           <div class="card__inner [ js-expander ]">
             <span>Speed</span>
-            <i class="fa fas fa-ruler"></i>
+            <i class="fa fas fa-bolt"></i>
           </div>
           <div class="card__expander">
             <div class="grid_container">
@@ -82,34 +82,35 @@
                   type="number"
                   id="speedInput"
                   placeholder="Enter: MPH"
+                 
                 />
                 <select
-                  onchange="mass_selection()"
                   class="selecton_drop_down"
                   id="select"
+                  onchange="speedCalc()"
+                 
                 >
                   <option value="MPH">Miles/Hour</option>
-                  <option value="FPC">Foot/Second</option>
+                  <option value="FPS">Foot/Second</option>
                   <option value="MPS">Meter/Second</option>
                   <option value="KPH">Klometer/Hour</option>
-                  <option value="KNOT">Knot</option>
                 </select>
               </div>
-              <div class="grid_item display_none">
-                Foot/Second<br />
-                <span id="grams">---</span>
+              <div id="MPH" class="Miles grid_item  display_none">
+                Miles/Hour <br />
+                <span class="MPH">---</span>
               </div>
-              <div class="pounds" class="grid_item">
+              <div id="FPS" class="grid_item">
                 Foot/Second <br />
-                <span id="pounds">---</span>
+                <span>---</span>
               </div>
-              <div class="kilograms" class="grid_item">
+              <div class="meters" class="grid_item">
                 Meter/Second<br />
-                <span id="kilograms">---</span>
+                <span id="MPS">---</span>
               </div>
-              <div class="grid_item Ounces">
+              <div class="grid_item kelometers">
                 Klometer/Hour<br />
-                <span id="Ounces">---</span>
+                <span id="KPH">---</span>
               </div>
             </div>
           </div>
