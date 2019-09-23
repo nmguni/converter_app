@@ -138,21 +138,86 @@ function mass_selection() {
 //--------------------- speed --------------
 // -----------------------------------------
 
-const MPHhtml = $("div, MPH");
-const FPShmtl = $("div, FPS");
-const MPShtml = $("");
+const MPH = $(".MPH");
+var FPS = $(".FPS");
+const KPH = $("#KPH");
 const KPHhtml = $("");
+
+// reset nums
+function reset_nums() {
+  MPH.text(0);
+  KPH.text(0);
+  FPS.text(0);
+}
 
 function speedCalc() {
   $("body").on("change", "#select", function() {
     const selected = this.value;
     if (selected == "FPS") {
+      reset_nums();
       footSecondCalc();
+      $("#FPS").addClass("display_none");
+      $("#MPH").removeClass("display_none");
+    } else if (selected == "MPS") {
+      reset_nums();
+      meterCalc();
+      $("#MPH").removeClass("display_none");
+      $(".MPS").addClass("display_none");
+      $("#FPS").removeClass("display_none");
+    } else if (selected == "KPH") {
+      kilometerCalc();
+      reset_nums();
+      $("#MPH").removeClass("display_none");
+      $(".KPH").addClass("display_none");
+      $("#FPS").removeClass("display_none");
     }
   });
 }
-// else if ...
+// enter function
 
 function footSecondCalc() {
-  FPShmtl.addClass("display_none");
+  $("input").attr("placeholder", "Enter: Feet");
+  // Calculation
+  $("#speedInput").on("keypress", function(e) {
+    if (e.which == 13) {
+      var speedInput = parseInt($("#speedInput").val());
+      let total = (speedInput / 1.467).toFixed(3);
+      $(".MPH").text(total);
+    }
+  });
 }
+
+function meterCalc() {
+  $("input").attr("placeholder", "Enter: Meeter/S");
+  // Calculation
+  $("#speedInput").on("keypress", function(e) {
+    if (e.which == 13) {
+      var speedInput = parseInt($("#speedInput").val());
+      // MPH  FPS  KPH
+      $(".MPH").text((speedInput * 2.237).toFixed(3));
+      $(".FPS").text((speedInput * 3.281).toFixed(3));
+      $("#KPH").text((speedInput * 3.6).toFixed(3));
+    }
+  });
+}
+
+function kilometerCalc() {
+  $("input").attr("placeholder", "Enter: Kilometer/h");
+  $("#speedInput").on("keypress", function(e) {
+    if (e.which == 13) {
+      var speedInput = parseInt($("#speedInput").val());
+      // MPH  FPS  KPH
+      $(".MPH").text((speedInput / 1.0609).toFixed(3));
+      $(".FPS").text((speedInput / 1.097).toFixed(3));
+      $("#MPS").text((speedInput / 3.6).toFixed(3));
+    }
+  });
+}
+
+// function milesCalc() {
+//   $("input").attr("placeholder", "Enter: Feet");
+// }
+
+// function KilometerCalc() {
+//   $("input").attr("placeholder", "Enter: Feet");
+// }
