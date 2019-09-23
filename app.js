@@ -142,12 +142,13 @@ const MPH = $(".MPH");
 var FPS = $(".FPS");
 const KPH = $("#KPH");
 const KPHhtml = $("");
-
+const MPS = $("#MPS");
 // reset nums
 function reset_nums() {
   MPH.text(0);
   KPH.text(0);
   FPS.text(0);
+  MPS.text(0);
 }
 
 function speedCalc() {
@@ -173,8 +174,15 @@ function speedCalc() {
     }
   });
 }
-// enter function
+let obj = {
+  get propName() {
+    // getter, the code executed on getting obj.propName
+  },
 
+  set propName(value) {
+    // setter, the code executed on setting obj.propName = value
+  }
+};
 function footSecondCalc() {
   $("input").attr("placeholder", "Enter: Feet");
   // Calculation
@@ -213,7 +221,7 @@ function kilometerCalc() {
     }
   });
 }
-
+//
 // function milesCalc() {
 //   $("input").attr("placeholder", "Enter: Feet");
 // }
