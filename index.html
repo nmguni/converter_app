@@ -169,34 +169,34 @@
                 <input
                   type="number"
                   id="pressureInput"
-                  placeholder="Enter: MPH"
+                  placeholder="Enter: Atmosphere"
                 />
                 <select
                   class="selecton_drop_down"
                   id="select"
-                  onchange="speedCalc()"
+                  onchange="pressureCalc()"
                 >
                   <option value="Atmosphere">Atmosphere</option>
                   <option value="Bar">Bar</option>
                   <option value="Pascal">Pascal</option>
-                  <option value="PFPS">Pound-force per square inch</option>
+                  <option value="PFPS">Pound-force...</option>
                 </select>
               </div>
-              <div id="Atmosphere" class="Miles grid_item  display_none">
+              <div class="Miles grid_item  display_none atmosphere">
                 Atmosphere <br />
-                <span class="Atmosphere">---</span>
+                <span id="Atmosphere">---</span>
               </div>
-              <div id="Bar" class="grid_item">
+              <div class="grid_item bar">
                 Bar<br />
-                <span class="Bar">---</span>
+                <span id="bar">---</span>
               </div>
-              <div class="grid_item Pascal">
+              <div class="grid_item pascal">
                 Pascal<br />
-                <span id="MPS">---</span>
+                <span id="pascal">---</span>
               </div>
-              <div class="grid_item kilowatt">
-                Pound-force per square inch<br />
-                <span id="kilowatt">---</span>
+              <div class="grid_item PFPS">
+                Pound-force...<br />
+                <span id="PFPS">---</span>
               </div>
             </div>
           </div>
