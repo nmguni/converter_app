@@ -134,9 +134,9 @@ function mass_selection() {
   }
 }
 
-// -----------------------------------------
-//--------------------- speed --------------
-// -----------------------------------------
+// ----------------------------------------------------------------
+//-------------------------------- SPEED ---------------------------
+// -----------------------------------------------------------------
 
 const MPH = $(".MPH");
 var FPS = $(".FPS");
@@ -159,30 +159,26 @@ function speedCalc() {
       footSecondCalc();
       $("#FPS").addClass("display_none");
       $("#MPH").removeClass("display_none");
+      $(".MPS").removeClass("display_none");
+      $(".KPH").removeClass("display_none");
     } else if (selected == "MPS") {
       reset_nums();
       meterCalc();
       $("#MPH").removeClass("display_none");
       $(".MPS").addClass("display_none");
       $("#FPS").removeClass("display_none");
+      $(".KPH").removeClass("display_none");
     } else if (selected == "KPH") {
       kilometerCalc();
       reset_nums();
       $("#MPH").removeClass("display_none");
       $(".KPH").addClass("display_none");
       $("#FPS").removeClass("display_none");
+      $(".MPS").removeClass("display_none");
     }
   });
 }
-let obj = {
-  get propName() {
-    // getter, the code executed on getting obj.propName
-  },
 
-  set propName(value) {
-    // setter, the code executed on setting obj.propName = value
-  }
-};
 function footSecondCalc() {
   $("input").attr("placeholder", "Enter: Feet");
   // Calculation
@@ -221,11 +217,104 @@ function kilometerCalc() {
     }
   });
 }
-//
-// function milesCalc() {
-//   $("input").attr("placeholder", "Enter: Feet");
-// }
 
-// function KilometerCalc() {
-//   $("input").attr("placeholder", "Enter: Feet");
-// }
+// ----------------------------------------------------------------
+//-------------------------------- ENERGY ---------------------------
+// -----------------------------------------------------------------
+const BTU = $("#BTU");
+const kiloJ = $("#kiloJ");
+const watt = $("#watt");
+const joule = $("#joule");
+// reset nums
+function reset_nums() {
+  BTU.text(0);
+  kiloJ.text(0);
+  watt.text(0);
+  joule.text(0);
+}
+
+function energyCalc() {
+  $("body").on("change", "#select", function() {
+    const selected = this.value;
+    if (selected == "joule") {
+      reset_nums();
+      jouleCalc();
+    } else if (selected == "kiloJ") {
+      reset_nums();
+      kiloJ_Calc();
+      $(".watt").removeClass("display_none");
+      $(".kiloJ").addClass("display_none");
+      $(".joule").removeClass("display_none");
+      $(".BTU").removeClass("display_none");
+      // someting
+    } else if (selected == "wattHr") {
+      reset_nums();
+      wattHr_Calc();
+      $(".watt").addClass("display_none");
+      $(".kiloJ").removeClass("display_none");
+      $(".BTU").removeClass("display_none");
+      //  something
+    } else if (selected == "BTU") {
+      reset_nums();
+      BTU_Calc();
+      $(".BTU").addClass("display_none");
+      $(".joule").removeClass("display_none");
+      $(".watt").removeClass("display_none");
+      // somethin
+    }
+  });
+}
+
+//  ----------------- calcuation functions
+
+function jouleCalc() {
+  $("input").attr("placeholder", "Enter: Joule ");
+  $("#energyInput").on("keypress", function(e) {
+    if (e.which == 13) {
+      const e_input = parseInt($("#energyInput").val());
+      // MPH  FPS  KPH
+      $("#kiloJ").text((e_input / 1000).toFixed(3));
+      $("#watt").text((e_input / 3600).toFixed(3));
+      $("#BTU").text((e_input / 1055.056).toFixed(3));
+    }
+  });
+}
+
+function kiloJ_Calc() {
+  $("input").attr("placeholder", "Enter: Kilojoules ");
+  $("#energyInput").on("keypress", function(e) {
+    if (e.which == 13) {
+      const e_input = parseInt($("#energyInput").val());
+      // MPH  FPS  KPH
+      $("#joule").text((e_input * 1000).toFixed(3));
+      $("#watt").text((e_input / 3.6).toFixed(3));
+      $("#BTU").text((e_input / 11.055).toFixed(3));
+    }
+  });
+}
+
+function wattHr_Calc() {
+  $("input").attr("placeholder", "Enter: Watt Hour ");
+  $("#energyInput").on("keypress", function(e) {
+    if (e.which == 13) {
+      const e_input = parseInt($("#energyInput").val());
+      // -------------
+      $("#joule").text("~ " + (e_input * 3600).toFixed(3));
+      $("#kiloJ").text("~ " + (e_input / 3.6).toFixed(3));
+      $("#BTU").text("~ " + (e_input * 3.412).toFixed(3));
+    }
+  });
+}
+
+function BTU_Calc() {
+  $("input").attr("placeholder", "Enter: British Thermal Units ");
+  $("#energyInput").on("keypress", function(e) {
+    if (e.which == 13) {
+      const e_input = parseInt($("#energyInput").val());
+      // MPH  FPS  KPH
+      $("#joule").text("~ " + (e_input / 1055.056).toFixed(3));
+      $("#kiloJ").text("~ " + (e_input / 1.055).toFixed(3));
+      $("#watt").text("~ " + (e_input / 3.412).toFixed(3));
+    }
+  });
+}

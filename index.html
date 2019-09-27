@@ -78,22 +78,16 @@
           <div class="card__expander">
             <div class="grid_container">
               <div class="grid_item">
-                <input
-                  type="number"
-                  id="speedInput"
-                  placeholder="Enter: MPH"
-                 
-                />
+                <input type="number" id="speedInput" placeholder="Enter: MPH" />
                 <select
                   class="selecton_drop_down"
                   id="select"
                   onchange="speedCalc()"
-                 
                 >
                   <option value="MPH">Miles/Hour</option>
                   <option value="FPS">Foot/Second</option>
                   <option value="MPS">Meter/Second</option>
-                  <option value="KPH">Kilometer/Hour</option>
+                  <option value="KPH">Klometer/Hour</option>
                 </select>
               </div>
               <div id="MPH" class="Miles grid_item  display_none">
@@ -108,60 +102,195 @@
                 Meter/Second<br />
                 <span id="MPS">---</span>
               </div>
-              <div class="grid_item KPH">
-                Kilometer/Hour<br />
+              <div class="grid_item kelometers">
+                Klometer/Hour<br />
                 <span id="KPH">---</span>
               </div>
             </div>
           </div>
         </div>
-   
-  
 
-    <div class=" card [ is-collapsed ] ">
-      <div class="card__inner [ js-expander ]">
-        <span>Energy</span>
-        <i class="fa fas fa-battery-three-quarters"></i>
-      </div>
-      <div class="card__expander">
-        <i class="fa fa-close [ js-collapser ]"></i>
-        Expander
-      </div>
-    </div>
+        <div class=" card [ is-collapsed ] ">
+          <div class="card__inner [ js-expander ]">
+            <span>Energy</span>
+            <i class="fa fas fa-battery-three-quarters"></i>
+          </div>
+          <div class="card__expander">
+            <i class="fa fa-close [ js-collapser ]"></i>
 
-    <div class=" card [ is-collapsed ] ">
-      <div class="card__inner [ js-expander ]">
-        <span>pressure</span>
-        <i class="fa fas fa-compress-arrows-alt"></i>
-      </div>
-      <div class="card__expander">
-        <i class="fa fa-close [ js-collapser ]"></i>
-        Expander
-      </div>
-    </div>
+            <div class="grid_container">
+              <div class="grid_item">
+                <input
+                  type="number"
+                  id="energyInput"
+                  placeholder="Enter: Jouls"
+                />
+                <select
+                  class="selecton_drop_down"
+                  id="select"
+                  onchange=" energyCalc()"
+                >
+                  <option value="joule">Joule</option>
+                  <option value="kiloJ">Kilojoule</option>
+                  <option value="wattHr">Watt hr</option>
+                  <option value="BTU">British thermal unit</option>
+                </select>
+              </div>
+              <div joule class="joule Miles grid_item  display_none">
+                Joule <br />
+                <span id="joule">---</span>
+              </div>
+              <div class="kiloJ" class="grid_item">
+                Kilojoule <br />
+                <span id="kiloJ">---</span>
+              </div>
+              <div class="grid_item watt">
+                Watt hr<br />
+                <span id="watt">---</span>
+              </div>
+              <div class="grid_item BTU">
+                British thermal unit<br />
+                <span id="BTU">---</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <div class=" card [ is-collapsed ] ">
-      <div class="card__inner [ js-expander ]">
-        <span>Length</span>
-        <i class="fa fas fa-ruler"></i>
-      </div>
-      <div class="card__expander">
-        <i class="fa fa-close [ js-collapser ]"></i>
-        Expander
-      </div>
-    </div>
+        <div class=" card [ is-collapsed ] ">
+          <div class="card__inner [ js-expander ]">
+            <span>pressure</span>
+            <i class="fa fas fa-compress-arrows-alt"></i>
+          </div>
+          <div class="card__expander">
+            <i class="fa fa-close [ js-collapser ]"></i>
 
-    <div class=" card [ is-collapsed ] ">
-      <div class="card__inner [ js-expander ]">
-        <span>Frequency</span>
-        <i class="fa fas fa-broadcast-tower"></i>
-      </div>
-      <div class="card__expander">
-        <i class="fa fa-close [ js-collapser ]"></i>
-        Expander
-      </div>
-    </div>
-    <!--
+            <div class="grid_container">
+              <div class="grid_item">
+                <input
+                  type="number"
+                  id="pressureInput"
+                  placeholder="Enter: MPH"
+                />
+                <select
+                  class="selecton_drop_down"
+                  id="select"
+                  onchange="speedCalc()"
+                >
+                  <option value="Atmosphere">Atmosphere</option>
+                  <option value="Bar">Bar</option>
+                  <option value="Pascal">Pascal</option>
+                  <option value="PFPS">Pound-force per square inch</option>
+                </select>
+              </div>
+              <div id="Atmosphere" class="Miles grid_item  display_none">
+                Atmosphere <br />
+                <span class="Atmosphere">---</span>
+              </div>
+              <div id="Bar" class="grid_item">
+                Bar<br />
+                <span class="Bar">---</span>
+              </div>
+              <div class="grid_item Pascal">
+                Pascal<br />
+                <span id="MPS">---</span>
+              </div>
+              <div class="grid_item kilowatt">
+                Pound-force per square inch<br />
+                <span id="kilowatt">---</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class=" card [ is-collapsed ] ">
+          <div class="card__inner [ js-expander ]">
+            <span>Plane Angle</span>
+            <i class="fa fas fa-ruler-combined"></i>
+          </div>
+          <div class="card__expander">
+            <!-- <i class="fas fa-ruler-combined"></i> -->
+
+            <div class="grid_container">
+              <div class="grid_item">
+                <input type="number" id="angleInput" placeholder="Enter: MPH" />
+                <select
+                  class="selecton_drop_down"
+                  id="select"
+                  onchange="speedCalc()"
+                >
+                  <option value="Degree">Degree</option>
+                  <option value="Gradian">Gradian</option>
+                  <option value="Radian">Radian</option>
+                  <option value="Militadan">Militadan</option>
+                </select>
+              </div>
+              <div id="Degree" class="Miles grid_item  display_none">
+                Degree <br />
+                <span class="Degree">---</span>
+              </div>
+              <div id="Gradian" class="grid_item">
+                Degree <br />
+                <span class="Gradian">---</span>
+              </div>
+              <div class="grid_item watt">
+                Radian<br />
+                <span id="radian">---</span>
+              </div>
+              <div class="grid_item Militadan">
+                Militadan<br />
+                <span id="Militadan">---</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class=" card [ is-collapsed ] ">
+          <div class="card__inner [ js-expander ]">
+            <span>Frequency</span>
+            <i class="fa fas fa-broadcast-tower"></i>
+          </div>
+          <div class="card__expander">
+            <i class="fa fa-close [ js-collapser ]"></i>
+
+            <div class="grid_container">
+              <div class="grid_item">
+                <input
+                  type="number"
+                  id="frequencyInput"
+                  placeholder="Enter: MPH"
+                />
+                <select
+                  class="selecton_drop_down"
+                  id="select"
+                  onchange="speedCalc()"
+                >
+                  <option value="joule">Joule</option>
+                  <option value="kiloJ">Kilojoule</option>
+                  <option value="wattHr">Watt hr</option>
+                  <option value="KiloWattHr">Kilowatt hr</option>
+                </select>
+              </div>
+              <div id="joule" class="Miles grid_item  display_none">
+                Joule <br />
+                <span class="joule">---</span>
+              </div>
+              <div id="kiloJ" class="grid_item">
+                Kilojoule <br />
+                <span class="kiloJ">---</span>
+              </div>
+              <div class="grid_item watt">
+                Watt hr<br />
+                <span id="MPS">---</span>
+              </div>
+              <div class="grid_item kilowatt">
+                Kilowatt hr<br />
+                <span id="kilowatt">---</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--
         <div class=" card [ is-collapsed ] ">
           <div class="card__inner [ js-expander ]">
             <span>Card</span>
@@ -196,7 +325,8 @@
         </div>
       </div>
     </div> -->
-
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
