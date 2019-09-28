@@ -327,29 +327,45 @@ function BTU_Calc() {
 //-------------------------------- ENERGY ---------------------------
 // -----------------------------------------------------------------
 
+const bar = $("#bar");
+const atm = $("#Atmosphere");
+const psc = $("#pascal");
+const pfp = $("#PFPS");
+// reset nums
+function reset_nums() {
+  bar.text(0);
+  atm.text(0);
+  psc.text(0);
+  pfp.text(0);
+}
+
 function pressureCalc() {
   $("body").on("change", "#select", function() {
     const selected = this.value;
     if (selected == "Atmosphere") {
       atm_Calc();
+      reset_nums();
       $(".bar").removeClass("display_none");
       $(".atmosphere").addClass("display_none");
       $(".pascal").removeClass("display_none");
       $(".PFPS").removeClass("display_none");
     } else if (selected == "Bar") {
       bar_calc();
+      reset_nums();
       $(".bar").addClass("display_none");
       $(".atmosphere").removeClass("display_none");
       $(".pascal").removeClass("display_none");
       $(".PFPS").removeClass("display_none");
     } else if (selected == "Pascal") {
       pascal_calc();
+      reset_nums();
       $(".bar").removeClass("display_none");
       $(".atmosphere").removeClass("display_none");
       $(".pascal").addClass("display_none");
       $(".PFPS").removeClass("display_none");
     } else if (selected == "PFPS") {
       pounds_calc();
+      reset_nums();
       $(".bar").removeClass("display_none");
       $(".atmosphere").removeClass("display_none");
       $(".pascal").removeClass("display_none");
@@ -389,11 +405,11 @@ function pascal_calc() {
   $("input").attr("placeholder", "Enter: Pascal ");
   $("#pressureInput").on("keypress", function(e) {
     if (e.which == 13) {
-      // const e_input = parseInt($("#pressureInput").val());
-      // // -------------
-      // $("#joule").text("~ " + (e_input * 3600).toFixed(3));
-      // $("#kiloJ").text("~ " + (e_input / 3.6).toFixed(3));
-      // $("#BTU").text("~ " + (e_input * 3.412).toFixed(3));
+      const p_input = parseInt($("#pressureInput").val());
+      // -------------
+      $("#Atmosphere").text("~ " + (p_input / 101325).toFixed(5));
+      $("#bar").text("~ " + (p_input / 100000).toFixed(5));
+      $("#PFPS").text("~ " + (p_input / 6894.757).toFixed(5));
     }
   });
 }
@@ -401,11 +417,11 @@ function pounds_calc() {
   $("input").attr("placeholder", "Enter: Pound Force.. ");
   $("#pressureInput").on("keypress", function(e) {
     if (e.which == 13) {
-      // const e_input = parseInt($("#pressureInput").val());
-      // // -------------
-      // $("#joule").text("~ " + (e_input * 3600).toFixed(3));
-      // $("#kiloJ").text("~ " + (e_input / 3.6).toFixed(3));
-      // $("#BTU").text("~ " + (e_input * 3.412).toFixed(3));
+      const p_input = parseInt($("#pressureInput").val());
+      // -------------
+      $("#Atmosphere").text("~ " + (p_input / 14.696).toFixed(5));
+      $("#bar").text("~ " + (p_input / 14.504).toFixed(5));
+      $("#pascal").text("~ " + (p_input * 6894.757).toFixed(5));
     }
   });
 }
