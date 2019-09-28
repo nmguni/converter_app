@@ -332,19 +332,35 @@ function pressureCalc() {
     const selected = this.value;
     if (selected == "Atmosphere") {
       atm_Calc();
+      $(".bar").removeClass("display_none");
+      $(".atmosphere").addClass("display_none");
+      $(".pascal").removeClass("display_none");
+      $(".PFPS").removeClass("display_none");
     } else if (selected == "Bar") {
       bar_calc();
+      $(".bar").addClass("display_none");
+      $(".atmosphere").removeClass("display_none");
+      $(".pascal").removeClass("display_none");
+      $(".PFPS").removeClass("display_none");
     } else if (selected == "Pascal") {
       pascal_calc();
+      $(".bar").removeClass("display_none");
+      $(".atmosphere").removeClass("display_none");
+      $(".pascal").addClass("display_none");
+      $(".PFPS").removeClass("display_none");
     } else if (selected == "PFPS") {
       pounds_calc();
+      $(".bar").removeClass("display_none");
+      $(".atmosphere").removeClass("display_none");
+      $(".pascal").removeClass("display_none");
+      $(".PFPS").addClass("display_none");
     }
   });
 }
 
 //  ----------------- calcuation functions
 function atm_Calc() {
-  $("input").attr("placeholder", "Enter: atmosphere ");
+  $("input").attr("placeholder", "Enter: Atmosphere ");
   $("#pressureInput").on("keypress", function(e) {
     if (e.which == 13) {
       const p_input = parseInt($("#pressureInput").val());
@@ -381,7 +397,6 @@ function pascal_calc() {
     }
   });
 }
-
 function pounds_calc() {
   $("input").attr("placeholder", "Enter: Pound Force.. ");
   $("#pressureInput").on("keypress", function(e) {
