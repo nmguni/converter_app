@@ -212,33 +212,37 @@
 
             <div class="grid_container">
               <div class="grid_item">
-                <input type="number" id="angleInput" placeholder="Enter: MPH" />
+                <input
+                  type="number"
+                  id="angleInput"
+                  placeholder="Enter: Plane Angle"
+                />
                 <select
                   class="selecton_drop_down"
                   id="select"
-                  onchange="speedCalc()"
+                  onchange="angleCalc()"
                 >
-                  <option value="Degree">Degree</option>
-                  <option value="Gradian">Gradian</option>
-                  <option value="Radian">Radian</option>
-                  <option value="Militadan">Militadan</option>
+                  <option value="degree">Degree</option>
+                  <option value="gradian">Gradian</option>
+                  <option value="radian">Radian</option>
+                  <option value="miliradan">Miliradan</option>
                 </select>
               </div>
-              <div id="Degree" class="Miles grid_item  display_none">
+              <div class="Miles grid_item  display_none degree">
                 Degree <br />
-                <span class="Degree">---</span>
+                <span id="degree">---</span>
               </div>
-              <div id="Gradian" class="grid_item">
-                Degree <br />
-                <span class="Gradian">---</span>
+              <div class="grid_item gradian">
+                Gradian <br />
+                <span id="gradian">---</span>
               </div>
-              <div class="grid_item watt">
+              <div class="grid_item radian">
                 Radian<br />
                 <span id="radian">---</span>
               </div>
-              <div class="grid_item Militadan">
+              <div class="grid_item miliradan">
                 Militadan<br />
-                <span id="Militadan">---</span>
+                <span id="miliradan">---</span>
               </div>
             </div>
           </div>
@@ -246,8 +250,8 @@
 
         <div class=" card [ is-collapsed ] ">
           <div class="card__inner [ js-expander ]">
-            <span>Frequency</span>
-            <i class="fa fas fa-broadcast-tower"></i>
+            <span>Data Transfer Rate</span>
+            <i class=" fa fas fa-database"></i>
           </div>
           <div class="card__expander">
             <i class="fa fa-close [ js-collapser ]"></i>
@@ -256,34 +260,34 @@
               <div class="grid_item">
                 <input
                   type="number"
-                  id="frequencyInput"
+                  id="dataTranserRate"
                   placeholder="Enter: MPH"
                 />
                 <select
                   class="selecton_drop_down"
                   id="select"
-                  onchange="speedCalc()"
+                  onchange="dataTranserCalc()"
                 >
-                  <option value="joule">Joule</option>
-                  <option value="kiloJ">Kilojoule</option>
-                  <option value="wattHr">Watt hr</option>
-                  <option value="KiloWattHr">Kilowatt hr</option>
+                  <option value="bit">Bit pr second</option>
+                  <option value="kiloJ">Megabyte per second</option>
+                  <option value="wattHr">Gigabyte per second </option>
+                  <option value="KiloWattHr">Terabyte per scond</option>
                 </select>
               </div>
               <div id="joule" class="Miles grid_item  display_none">
-                Joule <br />
+                Bit / Second <br />
                 <span class="joule">---</span>
               </div>
               <div id="kiloJ" class="grid_item">
-                Kilojoule <br />
+                Megabyte / Second <br />
                 <span class="kiloJ">---</span>
               </div>
               <div class="grid_item watt">
-                Watt hr<br />
+                Megabyte / Second<br />
                 <span id="MPS">---</span>
               </div>
               <div class="grid_item kilowatt">
-                Kilowatt hr<br />
+                Terabyte / Second<br />
                 <span id="kilowatt">---</span>
               </div>
             </div>

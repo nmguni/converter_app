@@ -1,7 +1,7 @@
 // open close
 var $cell = $(".card");
 //open and close card when clicked on card
-$cell.find(".js-expander").click(function() {
+$cell.find(".js-expander").click(function () {
   var $thisCell = $(this).closest(".card");
 
   if ($thisCell.hasClass("is-collapsed")) {
@@ -24,7 +24,7 @@ $cell.find(".js-expander").click(function() {
 });
 
 //close card when click on cross
-$cell.find(".js-collapser").click(function() {
+$cell.find(".js-collapser").click(function () {
   var $thisCell = $(this).closest(".card");
 
   $thisCell.removeClass("is-expanded").addClass("is-collapsed");
@@ -152,7 +152,7 @@ function reset_nums() {
 }
 
 function speedCalc() {
-  $("body").on("change", "#select", function() {
+  $("body").on("change", "#select", function () {
     const selected = this.value;
     if (selected == "FPS") {
       reset_nums();
@@ -182,7 +182,7 @@ function speedCalc() {
 function footSecondCalc() {
   $("input").attr("placeholder", "Enter: Feet");
   // Calculation
-  $("#speedInput").on("keypress", function(e) {
+  $("#speedInput").on("keypress", function (e) {
     if (e.which == 13) {
       var speedInput = parseInt($("#speedInput").val());
       let total = (speedInput / 1.467).toFixed(3);
@@ -194,7 +194,7 @@ function footSecondCalc() {
 function meterCalc() {
   $("input").attr("placeholder", "Enter: Meeter/S");
   // Calculation
-  $("#speedInput").on("keypress", function(e) {
+  $("#speedInput").on("keypress", function (e) {
     if (e.which == 13) {
       var speedInput = parseInt($("#speedInput").val());
       // MPH  FPS  KPH
@@ -207,7 +207,7 @@ function meterCalc() {
 
 function kilometerCalc() {
   $("input").attr("placeholder", "Enter: Kilometer/h");
-  $("#speedInput").on("keypress", function(e) {
+  $("#speedInput").on("keypress", function (e) {
     if (e.which == 13) {
       var speedInput = parseInt($("#speedInput").val());
       // MPH  FPS  KPH
@@ -234,7 +234,7 @@ function reset_nums() {
 }
 
 function energyCalc() {
-  $("body").on("change", "#select", function() {
+  $("body").on("change", "#select", function () {
     const selected = this.value;
     if (selected == "joule") {
       reset_nums();
@@ -273,7 +273,7 @@ function energyCalc() {
 
 function jouleCalc() {
   $("input").attr("placeholder", "Enter: Joule ");
-  $("#energyInput").on("keypress", function(e) {
+  $("#energyInput").on("keypress", function (e) {
     if (e.which == 13) {
       const e_input = parseInt($("#energyInput").val());
       // MPH  FPS  KPH
@@ -286,7 +286,7 @@ function jouleCalc() {
 
 function kiloJ_Calc() {
   $("input").attr("placeholder", "Enter: Kilojoules ");
-  $("#energyInput").on("keypress", function(e) {
+  $("#energyInput").on("keypress", function (e) {
     if (e.which == 13) {
       const e_input = parseInt($("#energyInput").val());
       // MPH  FPS  KPH
@@ -299,7 +299,7 @@ function kiloJ_Calc() {
 
 function wattHr_Calc() {
   $("input").attr("placeholder", "Enter: Watt Hour ");
-  $("#energyInput").on("keypress", function(e) {
+  $("#energyInput").on("keypress", function (e) {
     if (e.which == 13) {
       const e_input = parseInt($("#energyInput").val());
       // -------------
@@ -312,7 +312,7 @@ function wattHr_Calc() {
 
 function BTU_Calc() {
   $("input").attr("placeholder", "Enter: British Thermal Units ");
-  $("#energyInput").on("keypress", function(e) {
+  $("#energyInput").on("keypress", function (e) {
     if (e.which == 13) {
       const e_input = parseInt($("#energyInput").val());
       // MPH  FPS  KPH
@@ -340,7 +340,7 @@ function reset_nums() {
 }
 
 function pressureCalc() {
-  $("body").on("change", "#select", function() {
+  $("body").on("change", "#select", function () {
     const selected = this.value;
     if (selected == "Atmosphere") {
       atm_Calc();
@@ -377,7 +377,7 @@ function pressureCalc() {
 //  ----------------- calcuation functions
 function atm_Calc() {
   $("input").attr("placeholder", "Enter: Atmosphere ");
-  $("#pressureInput").on("keypress", function(e) {
+  $("#pressureInput").on("keypress", function (e) {
     if (e.which == 13) {
       const p_input = parseInt($("#pressureInput").val());
       // -------------
@@ -390,7 +390,7 @@ function atm_Calc() {
 
 function bar_calc() {
   $("input").attr("placeholder", "Enter: Bar ");
-  $("#pressureInput").on("keypress", function(e) {
+  $("#pressureInput").on("keypress", function (e) {
     if (e.which == 13) {
       const p_input = parseInt($("#pressureInput").val());
       // -------------
@@ -403,7 +403,7 @@ function bar_calc() {
 
 function pascal_calc() {
   $("input").attr("placeholder", "Enter: Pascal ");
-  $("#pressureInput").on("keypress", function(e) {
+  $("#pressureInput").on("keypress", function (e) {
     if (e.which == 13) {
       const p_input = parseInt($("#pressureInput").val());
       // -------------
@@ -415,13 +415,208 @@ function pascal_calc() {
 }
 function pounds_calc() {
   $("input").attr("placeholder", "Enter: Pound Force.. ");
-  $("#pressureInput").on("keypress", function(e) {
+  $("#pressureInput").on("keypress", function (e) {
     if (e.which == 13) {
       const p_input = parseInt($("#pressureInput").val());
       // -------------
       $("#Atmosphere").text("~ " + (p_input / 14.696).toFixed(5));
       $("#bar").text("~ " + (p_input / 14.504).toFixed(5));
       $("#pascal").text("~ " + (p_input * 6894.757).toFixed(5));
+    }
+  });
+}
+
+// ----------------------------------------------------------------
+//-------------------------------- ENERGY ---------------------------
+// -----------------------------------------------------------------
+
+// reset nums
+function reset_nums() {
+  $("#degree").text(0);
+  $("#radian").text(0);
+  $("#miliradan").text(0);
+  $("#gradian").text(0);
+}
+
+function angleCalc() {
+  $("body").on("change", "#select", function () {
+    const selected = this.value;
+    if (selected == "degree") {
+      degreeCalc();
+      reset_nums();
+      $(".degree").addClass("display_none");
+      $(".radian").removeClass("display_none");
+      $(".miliradan").removeClass("display_none");
+      $(".gradian").removeClass("display_none");
+    } else if (selected == "gradian") {
+      gradianCalc();
+      reset_nums();
+      $(".degree").removeClass("display_none");
+      $(".radian").removeClass("display_none");
+      $(".miliradan").removeClass("display_none");
+      $(".gradian").addClass("display_none");
+    } else if (selected == "radian") {
+      radianCalc();
+      reset_nums();
+      $(".degree").removeClass("display_none");
+      $(".radian").addClass("display_none");
+      $(".miliradan").removeClass("display_none");
+      $(".gradian").removeClass("display_none");
+    } else if (selected == "miliradan") {
+      milRadian();
+      reset_nums();
+      $(".degree").removeClass("display_none");
+      $(".radian").removeClass("display_none");
+      $(".miliradan").addClass("display_none");
+      $(".gradian").removeClass("display_none");
+    }
+  });
+}
+
+function degreeCalc() {
+  $("input").attr("placeholder", "Enter: Degree ");
+  $("#angleInput").on("keypress", function (e) {
+    if (e.which == 13) {
+      const p_input = parseInt($("#angleInput").val());
+      //   // -------------
+      //   $("#Atmosphere").text("~ " + (p_input / 1.013).toFixed(3));
+      //   $("#pascal").text("~ " + (p_input * 100000).toFixed(3));
+      //   $("#PFPS").text("~ " + (p_input * 14.504).toFixed(3));
+    }
+  });
+}
+
+function gradianCalc() {
+  $("input").attr("placeholder", "Enter: Gradian ");
+  $("#angleInput").on("keypress", function (e) {
+    if (e.which == 13) {
+      const p_input = parseInt($("#angleInput").val());
+      // // -------------
+      // $("#Atmosphere").text("~ " + (p_input / 101325).toFixed(5));
+      // $("#bar").text("~ " + (p_input / 100000).toFixed(5));
+      // $("#PFPS").text("~ " + (p_input / 6894.757).toFixed(5));
+    }
+  });
+}
+function radianCalc() {
+  $("input").attr("placeholder", "Enter: Radian");
+  $("#angleInput").on("keypress", function (e) {
+    if (e.which == 13) {
+      const p_input = parseInt($("#angleInput").val());
+      // // -------------
+      // $("#Atmosphere").text("~ " + (p_input / 14.696).toFixed(5));
+      // $("#bar").text("~ " + (p_input / 14.504).toFixed(5));
+      // $("#pascal").text("~ " + (p_input * 6894.757).toFixed(5));
+    }
+  });
+}
+
+function milRadian() {
+  $("input").attr("placeholder", "Enter: Miliradian");
+  $("#angleInput").on("keypress", function (e) {
+    if (e.which == 13) {
+      const p_input = parseInt($("#angleInput").val());
+      // // -------------
+      // $("#Atmosphere").text("~ " + (p_input / 14.696).toFixed(5));
+      // $("#bar").text("~ " + (p_input / 14.504).toFixed(5));
+      // $("#pascal").text("~ " + (p_input * 6894.757).toFixed(5));
+    }
+  });
+}
+// ----------------------------------------------------------------
+//-------------------------------- FREQUENCY ---------------------------
+// -----------------------------------------------------------------
+
+// reset nums
+// function reset_nums() {
+//   $("#degree").text(0);
+//   $("#radian").text(0);
+//   $("#miliradan").text(0);
+//   $("#gradian").text(0);
+// }
+
+function dataTranserCalc() {
+  $("body").on("change", "#select", function () {
+    const selected = this.value;
+    if (selected == "joule") {
+      btPerSecond();
+      reset_nums();
+      // $(".degree").removeClass("display_none");
+      // $(".radian").addClass("display_none");
+      // $(".miliradan").removeClass("display_none");
+      // $(".gradian").removeClass("display_none");
+    } else if (selected == "kiloJ") {
+      MegaBitePerSecond();
+      reset_nums();
+      // $(".bar").addClass("display_none");
+      // $(".atmosphere").removeClass("display_none");
+      // $(".pascal").removeClass("display_none");
+      // $(".PFPS").removeClass("display_none");
+    } else if (selected == "wattHr") {
+      TeraBitePrSec();
+      reset_nums();
+      // $(".bar").removeClass("display_none");
+      // $(".atmosphere").removeClass("display_none");
+      // $(".pascal").addClass("display_none");
+      // $(".PFPS").removeClass("display_none");
+    } else if (selected == "KiloWattHr") {
+      gigabinePrSec();
+      reset_nums();
+      // $(".bar").removeClass("display_none");
+      // $(".atmosphere").removeClass("display_none");
+      // $(".pascal").removeClass("display_none");
+      // $(".PFPS").addClass("display_none");
+    }
+  });
+}
+
+function degreeCalc() {
+  $("input").attr("placeholder", "Enter: Degree ");
+  $("#dataTranserRate").on("keypress", function (e) {
+    if (e.which == 13) {
+      const p_input = parseInt($("#dataTranserRate").val());
+      //   // -------------
+      //   $("#Atmosphere").text("~ " + (p_input / 1.013).toFixed(3));
+      //   $("#pascal").text("~ " + (p_input * 100000).toFixed(3));
+      //   $("#PFPS").text("~ " + (p_input * 14.504).toFixed(3));
+    }
+  });
+}
+
+function gradianCalc() {
+  $("input").attr("placeholder", "Enter: Gradian ");
+  $("#dataTranserRate").on("keypress", function (e) {
+    if (e.which == 13) {
+      const p_input = parseInt($("#dataTranserRate").val());
+      // // -------------
+      // $("#Atmosphere").text("~ " + (p_input / 101325).toFixed(5));
+      // $("#bar").text("~ " + (p_input / 100000).toFixed(5));
+      // $("#PFPS").text("~ " + (p_input / 6894.757).toFixed(5));
+    }
+  });
+}
+function radianCalc() {
+  $("input").attr("placeholder", "Enter: Radian");
+  $("#dataTranserRate").on("keypress", function (e) {
+    if (e.which == 13) {
+      const p_input = parseInt($("#dataTranserRate").val());
+      // // -------------
+      // $("#Atmosphere").text("~ " + (p_input / 14.696).toFixed(5));
+      // $("#bar").text("~ " + (p_input / 14.504).toFixed(5));
+      // $("#pascal").text("~ " + (p_input * 6894.757).toFixed(5));
+    }
+  });
+}
+
+function milRadian() {
+  $("input").attr("placeholder", "Enter: Miliradian");
+  $("#dataTranserRate").on("keypress", function (e) {
+    if (e.which == 13) {
+      const p_input = parseInt($("#dataTranserRate").val());
+      // // -------------
+      // $("#Atmosphere").text("~ " + (p_input / 14.696).toFixed(5));
+      // $("#bar").text("~ " + (p_input / 14.504).toFixed(5));
+      // $("#pascal").text("~ " + (p_input * 6894.757).toFixed(5));
     }
   });
 }
