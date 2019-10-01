@@ -31,7 +31,7 @@ body {
 .header__subtitle {
   margin: 0;
   font-size: 1.5em;
-  color: #000;
+  color: rgb(180, 180, 180);
   font-family: "Yesteryear", cursive;
   font-weight: 500;
   line-height: 1.1;

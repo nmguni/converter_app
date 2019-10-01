@@ -138,20 +138,11 @@ function mass_selection() {
 //-------------------------------- SPEED ---------------------------
 // -----------------------------------------------------------------
 
-const MPH = $(".MPH");
-var FPS = $(".FPS");
-const KPH = $("#KPH");
-const KPHhtml = $("");
-const MPS = $("#MPS");
 // reset nums
-function reset_nums() {
-  MPH.text(0);
-  KPH.text(0);
-  FPS.text(0);
-  MPS.text(0);
-}
+
 
 function speedCalc() {
+
   $("body").on("change", "#select", function () {
     const selected = this.value;
     if (selected == "FPS") {
@@ -177,6 +168,12 @@ function speedCalc() {
       $(".MPS").removeClass("display_none");
     }
   });
+  function reset_nums() {
+    $(".MPH").text(0);
+    $(".FPS").text(0);
+    $("#KPH").text(0);
+    $("#MPS").text(0);
+  }
 }
 
 function footSecondCalc() {
@@ -187,6 +184,8 @@ function footSecondCalc() {
       var speedInput = parseInt($("#speedInput").val());
       let total = (speedInput / 1.467).toFixed(3);
       $(".MPH").text(total);
+      $("#MPS").text((speedInput / 3.6).toFixed(3));
+      $("#KPH").text((speedInput / 1.097).toFixed(3));
     }
   });
 }
@@ -221,52 +220,54 @@ function kilometerCalc() {
 // ----------------------------------------------------------------
 //-------------------------------- ENERGY ---------------------------
 // -----------------------------------------------------------------
-const BTU = $("#BTU");
-const kiloJ = $("#kiloJ");
-const watt = $("#watt");
-const joule = $("#joule");
+
 // reset nums
-function reset_nums() {
-  BTU.text(0);
-  kiloJ.text(0);
-  watt.text(0);
-  joule.text(0);
-}
+
 
 function energyCalc() {
   $("body").on("change", "#select", function () {
     const selected = this.value;
     if (selected == "joule") {
-      reset_nums();
       jouleCalc();
+      reset_nums();
       $(".joule").addClass("display_none");
       $(".watt").removeClass("display_none");
       $(".BTU").removeClass("display_none");
+      $(".kiloJ").removeClass("display_none");
     } else if (selected == "kiloJ") {
-      reset_nums();
+
       kiloJ_Calc();
+      reset_nums();
       $(".watt").removeClass("display_none");
       $(".kiloJ").addClass("display_none");
       $(".joule").removeClass("display_none");
       $(".BTU").removeClass("display_none");
       // someting
     } else if (selected == "wattHr") {
-      reset_nums();
+
       wattHr_Calc();
+      reset_nums();
       $(".watt").addClass("display_none");
       $(".kiloJ").removeClass("display_none");
       $(".BTU").removeClass("display_none");
       $(".joule").removeClass("display_none");
       //  something
     } else if (selected == "BTU") {
-      reset_nums();
+
       BTU_Calc();
+      reset_nums();
       $(".BTU").addClass("display_none");
       $(".joule").removeClass("display_none");
       $(".watt").removeClass("display_none");
-      // somethin
+      // // somethin
     }
   });
+  function reset_nums() {
+    $("#BTU").text(0);
+    $("#kiloJ").text(0);
+    $("#watt").text(0);
+    $("#joule").text(0);
+  }
 }
 
 //  ----------------- calcuation functions
@@ -327,17 +328,6 @@ function BTU_Calc() {
 //-------------------------------- ENERGY ---------------------------
 // -----------------------------------------------------------------
 
-const bar = $("#bar");
-const atm = $("#Atmosphere");
-const psc = $("#pascal");
-const pfp = $("#PFPS");
-// reset nums
-function reset_nums() {
-  bar.text(0);
-  atm.text(0);
-  psc.text(0);
-  pfp.text(0);
-}
 
 function pressureCalc() {
   $("body").on("change", "#select", function () {
@@ -372,6 +362,13 @@ function pressureCalc() {
       $(".PFPS").addClass("display_none");
     }
   });
+
+  function reset_nums() {
+    $("#bar").text(0);
+    $("#Atmosphere").text(0);
+    $("#pascal").text(0);
+    $("#PFPS").text(0);
+  }
 }
 
 //  ----------------- calcuation functions
@@ -427,16 +424,11 @@ function pounds_calc() {
 }
 
 // ----------------------------------------------------------------
-//-------------------------------- ENERGY ---------------------------
+//-------------------------------- angle ---------------------------
 // -----------------------------------------------------------------
 
 // reset nums
-function reset_nums() {
-  $("#degree").text(0);
-  $("#radian").text(0);
-  $("#miliradan").text(0);
-  $("#gradian").text(0);
-}
+
 
 function angleCalc() {
   $("body").on("change", "#select", function () {
@@ -471,6 +463,12 @@ function angleCalc() {
       $(".gradian").removeClass("display_none");
     }
   });
+  function reset_nums() {
+    $("#degree").text(0);
+    $("#radian").text(0);
+    $("#miliradan").text(0);
+    $("#gradian").text(0);
+  }
 }
 
 function degreeCalc() {
