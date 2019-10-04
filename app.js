@@ -522,7 +522,7 @@ function milRadian() {
   });
 }
 // ----------------------------------------------------------------
-//-------------------------------- FREQUENCY ---------------------------
+//-------------------------------- DATA TRANFER RATE  ---------------------------
 // -----------------------------------------------------------------
 
 // reset nums
@@ -536,29 +536,29 @@ function milRadian() {
 function dataTranserCalc() {
   $("body").on("change", "#select", function () {
     const selected = this.value;
-    if (selected == "joule") {
-      btPerSecond();
+    if (selected == "bit") {
+      bitCalc();
       reset_nums();
       // $(".degree").removeClass("display_none");
       // $(".radian").addClass("display_none");
       // $(".miliradan").removeClass("display_none");
       // $(".gradian").removeClass("display_none");
     } else if (selected == "kiloJ") {
-      MegaBitePerSecond();
+      megaCalc();
       reset_nums();
       // $(".bar").addClass("display_none");
       // $(".atmosphere").removeClass("display_none");
       // $(".pascal").removeClass("display_none");
       // $(".PFPS").removeClass("display_none");
     } else if (selected == "wattHr") {
-      TeraBitePrSec();
+      gigaCalc();
       reset_nums();
       // $(".bar").removeClass("display_none");
       // $(".atmosphere").removeClass("display_none");
       // $(".pascal").addClass("display_none");
       // $(".PFPS").removeClass("display_none");
     } else if (selected == "KiloWattHr") {
-      gigabinePrSec();
+      teraCalc();
       reset_nums();
       // $(".bar").removeClass("display_none");
       // $(".atmosphere").removeClass("display_none");
@@ -568,8 +568,8 @@ function dataTranserCalc() {
   });
 }
 
-function degreeCalc() {
-  $("input").attr("placeholder", "Enter: Degree ");
+function bitCalc() {
+  $("input").attr("placeholder", "Enter: Bit ");
   $("#dataTranserRate").on("keypress", function (e) {
     if (e.which == 13) {
       const p_input = parseInt($("#dataTranserRate").val());
@@ -581,8 +581,8 @@ function degreeCalc() {
   });
 }
 
-function gradianCalc() {
-  $("input").attr("placeholder", "Enter: Gradian ");
+function megaCalc() {
+  $("input").attr("placeholder", "Enter: Megabyte ");
   $("#dataTranserRate").on("keypress", function (e) {
     if (e.which == 13) {
       const p_input = parseInt($("#dataTranserRate").val());
@@ -593,8 +593,8 @@ function gradianCalc() {
     }
   });
 }
-function radianCalc() {
-  $("input").attr("placeholder", "Enter: Radian");
+function gigaCalc() {
+  $("input").attr("placeholder", "Enter: Gigabyte");
   $("#dataTranserRate").on("keypress", function (e) {
     if (e.which == 13) {
       const p_input = parseInt($("#dataTranserRate").val());
@@ -606,8 +606,8 @@ function radianCalc() {
   });
 }
 
-function milRadian() {
-  $("input").attr("placeholder", "Enter: Miliradian");
+function teraCalc() {
+  $("input").attr("placeholder", "Enter: Terabyte");
   $("#dataTranserRate").on("keypress", function (e) {
     if (e.which == 13) {
       const p_input = parseInt($("#dataTranserRate").val());
