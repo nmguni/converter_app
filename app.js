@@ -526,12 +526,12 @@ function milRadian() {
 // -----------------------------------------------------------------
 
 // reset nums
-// function reset_nums() {
-//   $("#degree").text(0);
-//   $("#radian").text(0);
-//   $("#miliradan").text(0);
-//   $("#gradian").text(0);
-// }
+function reset_nums() {
+  $("#bitSec").text(0);
+  $("#gigaSec").text(0);
+  $("#teraSec").text(0);
+  $("#megaSec").text(0);
+}
 
 function dataTranserCalc() {
   $("body").on("change", "#select", function () {
@@ -539,31 +539,31 @@ function dataTranserCalc() {
     if (selected == "bit") {
       bitCalc();
       reset_nums();
-      // $(".degree").removeClass("display_none");
-      // $(".radian").addClass("display_none");
-      // $(".miliradan").removeClass("display_none");
-      // $(".gradian").removeClass("display_none");
-    } else if (selected == "kiloJ") {
+      $(".bitSec").addClass("display_none");
+      $(".megaSec").removeClass("display_none");
+      $(".gigaSec").removeClass("display_none");
+      $(".milirteraSecadan").removeClass("display_none");
+    } else if (selected == "mega") {
       megaCalc();
       reset_nums();
-      // $(".bar").addClass("display_none");
-      // $(".atmosphere").removeClass("display_none");
-      // $(".pascal").removeClass("display_none");
-      // $(".PFPS").removeClass("display_none");
-    } else if (selected == "wattHr") {
+      $(".bitSec").removeClass("display_none");
+      $(".megaSec").addClass("display_none");
+      $(".gigaSec").removeClass("display_none");
+      $(".teraSec").removeClass("display_none");
+    } else if (selected == "giga") {
       gigaCalc();
       reset_nums();
-      // $(".bar").removeClass("display_none");
-      // $(".atmosphere").removeClass("display_none");
-      // $(".pascal").addClass("display_none");
-      // $(".PFPS").removeClass("display_none");
-    } else if (selected == "KiloWattHr") {
+      $(".bitSec").removeClass("display_none");
+      $(".megaSec").removeClass("display_none");
+      $(".gigaSec").addClass("display_none");
+      $(".teraSec").removeClass("display_none");
+    } else if (selected == "tera") {
       teraCalc();
       reset_nums();
-      // $(".bar").removeClass("display_none");
-      // $(".atmosphere").removeClass("display_none");
-      // $(".pascal").removeClass("display_none");
-      // $(".PFPS").addClass("display_none");
+      $(".bitSec").removeClass("display_none");
+      $(".megaSec").removeClass("display_none");
+      $(".gigaSec").removeClass("display_none");
+      $(".teraSec").addClass("display_none");
     }
   });
 }
